@@ -9,17 +9,19 @@ pip install scholarly
 
 ## Running
 
-Basic
+Minimal
 ```
 python Main.py --name "Alan Turing" --year 2020
 ```
 
-Advanced
-Basic
+Custom
 ```
 python Main.py --name "Alan Turing" --year 2020 --allDetails True --delaySec 4
 ```
 
+**allDetails** prints the name of journal, authors and year.
+**delaySec** is used to stop google from blocking you.
+
 ## Issues
 
-Google detects this as a bot and blocks the requests. 
+Implement the exact harvard format to print publicaitons.

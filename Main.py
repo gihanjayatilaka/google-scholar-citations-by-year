@@ -67,7 +67,10 @@ if __name__=="__main__":
 		# print(pub)
 		try:
 			thisPubCitationIdx=1
-			print("{}\t {}\t {}.\t{}".format(pubIdx,"-","-",pub2String(pub,titleOnly=False)))
+			if args.allDetails:
+				print("{}\t {}\t {}.\t{}".format(pubIdx,"-","-",pub2String(pub,titleOnly=False)))
+			else:
+				print("{}\t {}\t {}.\t{}".format(pubIdx,"-","-",pub2String(pub)))
 			delay()
 			citations=scholarly.citedby(pub)
 			for citation in citations:
