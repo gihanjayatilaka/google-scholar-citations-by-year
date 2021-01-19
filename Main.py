@@ -37,20 +37,21 @@ if __name__=="__main__":
 		# print(pub)
 		scholarly.fill(pub)
 		# print(pub)
-		# try:
-		thisPubCitationIdx=1
-		print("{}\t {}\t {}.\t{}".format(pubIdx,"-","-",pub['bib']['title']))
-		citations=scholarly.citedby(pub)
-		for citation in citations:
-			if citation['bib']['pub_year']==str(args.year):
-				print("{}\t {}\t {}.\t{}".format(pubIdx,thisPubCitationIdx,allPubsCitationIdx,citation['bib']['title']))
-				thisPubCitationIdx+=1
-				allPubsCitationIdx+=1
-		pubIdx+=1
+		try:
+			thisPubCitationIdx=1
+			print("{}\t {}\t {}.\t{}".format(pubIdx,"-","-",pub['bib']['title']))
+			
+			citations=scholarly.citedby(pub)
+			for citation in citations:
+				if citation['bib']['pub_year']==str(args.year):
+					print("{}\t {}\t {}.\t{}".format(pubIdx,thisPubCitationIdx,allPubsCitationIdx,citation['bib']['title']))
+					thisPubCitationIdx+=1
+					allPubsCitationIdx+=1
+			pubIdx+=1
 
-		# except:
-		# 	print("err")
-		# 	errors.append(pub['bib']['title'])
+		except:
+				print("err")
+				errors.append(pub['bib']['title'])
 
 
 
